@@ -122,6 +122,42 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 
 /***/ }),
 
+/***/ "./src/displayContact.js":
+/*!*******************************!*\
+  !*** ./src/displayContact.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction displayContact() {\r\n    const content = document.getElementById('content');\r\n\r\n    const text = document.createElement('p');\r\n    text.textContent = 'ohyoyoyo';\r\n\r\n    content.appendChild(text);\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (displayContact);\n\n//# sourceURL=webpack:///./src/displayContact.js?");
+
+/***/ }),
+
+/***/ "./src/displayHome.js":
+/*!****************************!*\
+  !*** ./src/displayHome.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction displayHome() {\r\n    const content = document.getElementById('content');\r\n    const title = document.createElement('h1');\r\n    const img = document.createElement('img');\r\n    const desc = document.createElement('p');\r\n\r\n    title.textContent = 'Welcome to da restaurant zone';\r\n    img.src = 'https://www.cheatsheet.com/wp-content/uploads/2014/07/REST-e1405539646312.png';\r\n\r\n    desc.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem in dignissimos tenetur vitae quasi odio possimus, necessitatibus earum velit veniam esse blanditiis alias nisi sapiente quaerat omnis eos ullam assumenda?';\r\n\r\n    content.appendChild(title);\r\n    content.appendChild(img);\r\n    content.appendChild(desc);\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (displayHome);\n\n//# sourceURL=webpack:///./src/displayHome.js?");
+
+/***/ }),
+
+/***/ "./src/displayMenu.js":
+/*!****************************!*\
+  !*** ./src/displayMenu.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction displayMenu() {\r\n    const content = document.getElementById('content');\r\n\r\n    const text = document.createElement('p');\r\n    text.textContent = 'ayayaya';\r\n\r\n    content.appendChild(text);\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (displayMenu);\n\n//# sourceURL=webpack:///./src/displayMenu.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -130,7 +166,7 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\r\n// import './content.js';\r\n\r\n\r\n\r\n// Next, set up your restaurant site to use tabbed browsing to access the Contact and Menu pages. Look at the behavior of this student solution for visual inspiration.\r\n// https://eckben.github.io/bearysBreakfastBar/\r\n\r\n// Put the contents of each ‘tab’ inside of its own module. Each module will export a function that creates a div element, adds the appropriate content and styles to that element and then appends it to the DOM.\r\n\r\n// Write the tab-switching logic inside of index.js. You should have event listeners for each tab that wipes out the current contents and then runs the correct ‘tab module’ to populate it again.\r\n\r\n// https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page\r\n\r\n\r\nfunction openTab(evt, tabName) {\r\n    // Declare all variables\r\n    let i, tabcontent, tablinks;\r\n  \r\n    // Get all elements with class=\"tabcontent\" and hide them\r\n    tabcontent = document.getElementsByClassName(\"tabcontent\");\r\n    for (i = 0; i < tabcontent.length; i++) {\r\n      tabcontent[i].style.display = \"none\";\r\n    }\r\n  \r\n    // Get all elements with class=\"tablinks\" and remove the class \"active\"\r\n    tablinks = document.getElementsByClassName(\"tablinks\");\r\n    for (i = 0; i < tablinks.length; i++) {\r\n      tablinks[i].className = tablinks[i].className.replace(\" active\", \"\");\r\n    }\r\n  \r\n    // Show the current tab, and add an \"active\" class to the button that opened the tab\r\n    document.getElementById(tabName).style.display = \"block\";\r\n    evt.currentTarget.className += \" active\";\r\n  }\r\n\r\n  openTab(evt, tabName);\r\n\r\nconsole.log('test');\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _displayHome_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./displayHome.js */ \"./src/displayHome.js\");\n/* harmony import */ var _displayMenu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./displayMenu.js */ \"./src/displayMenu.js\");\n/* harmony import */ var _displayContact_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./displayContact.js */ \"./src/displayContact.js\");\n\r\n\r\n\r\n\r\n\r\n// Load homepage on load\r\nObject(_displayHome_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n\r\nconst homeBtn = document.getElementById('home-btn');\r\nconst menuBtn = document.getElementById('menu-btn');\r\nconst contactBtn = document.getElementById('contact-btn');\r\n\r\n// Function to wipe current content\r\nfunction clearContent() {\r\n  content.innerHTML = '';\r\n}\r\n\r\nhomeBtn.addEventListener('click', () => {\r\n  clearContent();\r\n  Object(_displayHome_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n})\r\n\r\nmenuBtn.addEventListener('click', () => {\r\n  clearContent();\r\n  Object(_displayMenu_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n})\r\n\r\ncontactBtn.addEventListener('click', () => {\r\n  clearContent();\r\n  Object(_displayContact_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\r\n})\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
